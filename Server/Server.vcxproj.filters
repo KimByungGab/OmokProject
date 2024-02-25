@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Main">
+      <UniqueIdentifier>{3ce63017-681d-4c43-b927-746895738194}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network">
+      <UniqueIdentifier>{257aad1a-3e1f-43e3-ab7d-3ed3c65cf16c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network\Packet">
+      <UniqueIdentifier>{85042a0f-ee94-4b75-b04c-c41ef0731c7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network\Error">
+      <UniqueIdentifier>{53d1c3de-ade1-4909-bd4c-3f5a4139b896}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Session">
+      <UniqueIdentifier>{6ed3df08-6a52-4b1b-a50a-7b68bc9b2811}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{1645dc9f-409a-4efb-bb46-2175071c583b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Room">
+      <UniqueIdentifier>{2a16394b-6d4e-490a-9425-04d6205691cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB">
+      <UniqueIdentifier>{6cdcce7f-0187-4dd1-8394-02d74aaf52cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network\Packet\DTO">
+      <UniqueIdentifier>{8330879c-9c71-458d-bda6-e142c854e3fb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="NetworkCore.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientInfo.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="PacketManager.cpp">
+      <Filter>Network\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="Session.cpp">
+      <Filter>Session</Filter>
+    </ClCompile>
+    <ClCompile Include="SessionManager.cpp">
+      <Filter>Session</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="RoomManager.cpp">
+      <Filter>Room</Filter>
+    </ClCompile>
+    <ClCompile Include="DBConnection.cpp">
+      <Filter>DB</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="NetworkDefine.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="NetworkCore.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientInfo.h">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="PacketManager.h">
+      <Filter>Network\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="Packet.h">
+      <Filter>Network\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="ErrorCode.h">
+      <Filter>Network\Error</Filter>
+    </ClInclude>
+    <ClInclude Include="Session.h">
+      <Filter>Session</Filter>
+    </ClInclude>
+    <ClInclude Include="SessionManager.h">
+      <Filter>Session</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomManager.h">
+      <Filter>Room</Filter>
+    </ClInclude>
+    <ClInclude Include="DBConnection.h">
+      <Filter>DB</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginDTO.h">
+      <Filter>Network\Packet\DTO</Filter>
+    </ClInclude>
+    <ClInclude Include="LobbyDTO.h">
+      <Filter>Network\Packet\DTO</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemDTO.h">
+      <Filter>Network\Packet\DTO</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomDTO.h">
+      <Filter>Network\Packet\DTO</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonDTO.h">
+      <Filter>Network\Packet\DTO</Filter>
+    </ClInclude>
+    <ClInclude Include="GameDTO.h">
+      <Filter>Network\Packet\DTO</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

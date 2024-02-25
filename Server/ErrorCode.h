@@ -1,0 +1,18 @@
+#pragma once
+
+enum class ERROR_CODE : unsigned short
+{
+	NOTHING = 0,
+	
+	TOO_MANY_ROOM = 10,
+
+	TOO_MANY_MEMBER = 20,
+	WRONG_ROOM = 21,
+	NOT_IN_THIS_ROOM = 22,
+
+	CANNOT_READY_GAME = 30,
+	CANNOT_FIND_ROOM = 31,
+	NOT_YOUR_TURN = 32,
+	ALREADY_PLACE = 33,
+	NOT_FOUND_SESSION = 34,
+};
