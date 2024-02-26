@@ -21,13 +21,14 @@
 #include <ctime>
 #include <cstdlib>
 
+// 패킷 매니저 클래스
 class PacketManager
 {
 public:
 	PacketManager() = default;
 	~PacketManager() = default;
 
-	void Init(const UINT32 maxClient);
+	void Init();
 	void Run();
 	void End();
 	void PushPacketClient(const UINT32 clientIndex);
@@ -36,7 +37,7 @@ public:
 	void ConnectClient(UINT32 clientIndex);
 	void DisconnectClient(UINT32 clientIndex);
 
-	function<void(UINT32, UINT32, char*)> SendPacketFunc;
+	function<void(UINT32, UINT32, char*)> SendPacketFunc;	// 패킷 송신 함수 변수
 
 	void AddSession(const int addedCount);
 
@@ -61,16 +62,16 @@ private:
 
 	void ErrorSend(UINT32 clientIndex, ERROR_CODE code);
 
-	typedef void(PacketManager::* PROCESS_RECV_PACKET_FUNCTION)(UINT32, UINT16, char*);
-	unordered_map<int, PROCESS_RECV_PACKET_FUNCTION> mRecvFunctionTable;
+	typedef void(PacketManager::* PROCESS_RECV_PACKET_FUNCTION)(UINT32, UINT16, char*);		// 연결되는 함수 포인터
+	unordered_map<int, PROCESS_RECV_PACKET_FUNCTION> mRecvFunctionTable;					// 패킷ID와 함수포인터의 해시테이블
 
-	queue<UINT32> mClientQueue;
-	thread mProcessThread;
-	bool mIsProcessRun = false;
-	mutex mLock;
+	queue<UINT32> mClientQueue;			// 요청한 클라이언트 큐
+	thread mProcessThread;				// 요청 처리하는 쓰레드
+	bool mIsProcessRun = false;			// mProcessThread의 무한반복 조건
+	mutex mLock;						// 뮤텍스 락
 
-	RoomManager* mRoomManager;
-	SessionManager* mSessionManager;
-	GameManager* mGameManager;
-	DBConnection* mDBConn;
+	RoomManager* mRoomManager;			// 방 매니저
+	SessionManager* mSessionManager;	// 세션 매니저
+	GameManager* mGameManager;			// 게임 매니저
+	DBConnection* mDBConn;				// DB 연결 매니저
 };

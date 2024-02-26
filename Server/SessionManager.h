@@ -7,6 +7,7 @@
 
 using namespace std;
 
+// 세션 매니저 클래스
 class SessionManager
 {
 public:
@@ -19,6 +20,6 @@ public:
 	vector<Session*> GetLobbySessions();
 
 private:
-	vector<Session*> mSessions;
+	vector<Session*> mSessions;		// 세션 포인터 vector
 };
 

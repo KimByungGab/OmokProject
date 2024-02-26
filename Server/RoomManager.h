@@ -11,19 +11,21 @@
 
 using namespace std;
 
-#define ROOM_MAX_MEMBER_COUNT 2
-#define MAX_ROOM_COUNT 40
+#define ROOM_MAX_MEMBER_COUNT 2		// 방에 들어갈 수 있는 총 인원수
+#define MAX_ROOM_COUNT 40			// 방 생성 가능 수
 
-#define EMPTY "EMPTY"
+#define EMPTY "EMPTY"				// 방에 아무도 없을 때 구분짓기위한 상수
 
+// 방 정보 구조체
 struct st_room
 {
-	int roomNumber;
-	WCHAR roomName[45];
-	list<int> roomMembers;
-	bool isPlaying = false;
+	int roomNumber;				// 방 번호
+	WCHAR roomName[45];			// 방 이름
+	list<int> roomMembers;		// 방 안에 있는 세션 리스트
+	bool isPlaying = false;		// 현재 게임중 여부
 };
 
+// 방 매니저 클래스
 class RoomManager
 {
 public:
@@ -46,7 +48,7 @@ public:
 	const char* mEmptyString = EMPTY;
 
 private:
-	list<st_room> mRooms;
-	mutex mLock;
+	list<st_room> mRooms;	// 방 정보 리스트
+	mutex mLock;			// 뮤텍스 락
 };
 

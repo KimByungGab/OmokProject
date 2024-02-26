@@ -18,16 +18,18 @@
 
 using namespace std;
 
+// 송수신 확인
 enum class IOOperation
 {
 	RECV,
 	SEND
 };
 
+// Overlapped 확장 구조체
 struct stOverlappedEx
 {
-	WSAOVERLAPPED m_wsaOverlapped;
-	SOCKET m_socketClient;
-	WSABUF m_wsaBuf;
-	IOOperation m_eOperation;
+	WSAOVERLAPPED m_wsaOverlapped;	// Overlapped 구조체
+	SOCKET m_socketClient;			// 클라이언트 소켓
+	WSABUF m_wsaBuf;				// 송수신에 사용되는 WSA 버퍼
+	IOOperation m_eOperation;		// 송수신 확인 용도
 };

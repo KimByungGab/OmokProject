@@ -6,16 +6,18 @@
 
 using namespace std;
 
-#define MAX_CHAT_BUFFER 512
+#define MAX_CHAT_BUFFER 512		// 채팅 버퍼 최대크기
 
+// 패킷 정보
 struct PacketInfo
 {
-	UINT32 ClientIndex = 0;
-	UINT16 PacketID = 0;
-	UINT16 DataSize = 0;
-	char* pDataPtr = nullptr;
+	UINT32 ClientIndex = 0;		// 패킷 세션 인덱스
+	UINT16 PacketID = 0;		// 패킷 ID
+	UINT16 DataSize = 0;		// 패킷 데이터
+	char* pDataPtr = nullptr;	// 데이터 시작 포인터
 };
 
+// 패킷 ID
 enum class PACKET_ID : UINT16
 {
 	// 시스템
@@ -58,12 +60,14 @@ enum class PACKET_ID : UINT16
 
 #pragma pack(push, 1)
 
+// 패킷 공용 헤더
 struct PACKET_HEADER
 {
-	UINT16 PacketID;
-	UINT16 PacketLength;
+	UINT16 PacketID;		// 패킷 ID
+	UINT16 PacketLength;	// 패킷 길이
 };
 
+// 패킷 헤더 길이
 const UINT32 PACKET_HEADER_LENGTH = sizeof(PACKET_HEADER);
 
 #pragma pack(pop)
