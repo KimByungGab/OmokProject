@@ -609,7 +609,7 @@ void PacketManager::LeaveRoom(UINT32 clientIndex, UINT16 packetSize, char* pPack
 	}
 
 	// 퇴장을 했는데 방에 아무도 없을 경우
-	if (strcmp(result.pObject, mRoomManager->mEmptyString) == 0)
+	if (strcmp(reinterpret_cast<char*>(result.pObject), mRoomManager->mEmptyString) == 0)
 	{
 		// 방 제거
 		result = mRoomManager->DeleteRoom(roomIndex);

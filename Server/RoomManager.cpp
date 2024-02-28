@@ -63,7 +63,7 @@ COMMON_RESULT_DTO RoomManager::CreateRoom(WCHAR* roomName)
 	roomInfo.currentUserCount = 0;
 	roomInfo.totalUserCount = ROOM_MAX_MEMBER_COUNT;
 
-	result.pObject = reinterpret_cast<char*>(&roomInfo);
+	result.pObject = reinterpret_cast<void*>(&roomInfo);
 
 	return result;
 }
@@ -224,7 +224,7 @@ COMMON_RESULT_DTO RoomManager::DeleteRoom(int roomIndex)
 	}
 
 	retVal.code = ERROR_CODE::NOTHING;
-	retVal.pObject = reinterpret_cast<char*>(currentListIndex);
+	retVal.pObject = reinterpret_cast<void*>(currentListIndex);
 
 	// 방 번호로 현재 방 찾기
 	auto roomIter = find_if(mRooms.begin(), mRooms.end(), [=](st_room& currentRoom)

@@ -52,7 +52,7 @@ COMMON_RESULT_DTO Game::Ready(int sessionIndex)
 	}
 
 	retVal.code = ERROR_CODE::NOTHING;
-	retVal.pObject = reinterpret_cast<char*>(&mPlayers);
+	retVal.pObject = reinterpret_cast<void*>(&mPlayers);
 	
 	return retVal;
 }
@@ -154,7 +154,7 @@ COMMON_RESULT_DTO Game::ChoicePlace(int sessionIndex, USHORT horizontalNum, USHO
 	result.verticalNum = verticalNum;
 
 	retVal.code = ERROR_CODE::NOTHING;
-	retVal.pObject = reinterpret_cast<char*>(&result);
+	retVal.pObject = reinterpret_cast<void*>(&result);
 
 	// 다음 턴 적용
 	mCurrentTurn = nextSide;

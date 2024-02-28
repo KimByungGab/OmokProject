@@ -6,5 +6,5 @@
 struct COMMON_RESULT_DTO
 {
 	ERROR_CODE code;	// 에러 코드
-	char* pObject;		// 결과값. C#이나 Java의 Object 클래스가 C++에는 없어서 대신 사용하게 되었다.
+	void* pObject;		// 결과값. C#이나 Java의 Object 클래스가 C++에는 없어서 대신 사용하게 되었다.
 };
